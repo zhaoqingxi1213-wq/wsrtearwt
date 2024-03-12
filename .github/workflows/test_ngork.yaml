@@ -1,3 +1,12 @@
-steps:
-- name: Setup Debug Session
-  uses: csexton/debugger-action@master
+name: debugger-action
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Debug Session
+        uses: csexton/debugger-action@master
